@@ -1,48 +1,16 @@
 * {
     background-color: rgb(75, 75, 75);
 }
-
-div {
-    display:flex;
+body {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-div > div {
-    display: flex;
-    border: 1px solid yellow;
-    height: 6.25%;
-    width: 6.25%;
-    margin: -1px;
-    transition: background-color 1s;
-}
-
 #container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 850px;
-    height: 850px;
+    display: grid;
+    width: 750px;
+    height: 750px;
     border: 2px dashed cyan;
-    margin-top: 4px;
-}
-
-body {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.square {
-    transition: background-color 100ms ease-out;
-  }
-
-.changed {
-    background-color: rgb(255, 0, 0);
-}
-
-#newGrid {
-    color: cyan;
-    background-color: black;
-    font-size: 2em;
-    margin: 1em;
+    margin-top: 2em;
 }

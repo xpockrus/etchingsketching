@@ -1,20 +1,28 @@
-let container = document.querySelector("#container")
+const reset = document.querySelector("#newGrid");
 
-for (i = 0; i < 256; i++) {
-    let div = document.createElement("div")
-    div.setAttribute("class", "square");
-    container.appendChild(div);
+function createGrid(size) {
+    let container = document.querySelector("#container");
+    let squares = container.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
+    container.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size} , 1fr)`;
+
+    let sizeSquared = size * size
+    for (i = 0; i < sizeSquared; i++) {
+        let square = document.createElement("div")
+        square.style.backgroundColor = "red"
+        container.appendChild(square);
+    }
 }
 
-let tiles = document.querySelectorAll(".square");
+createGrid(16);
 
-tiles.forEach((tile) => {
-    tile.addEventListener("mouseover", function(e) {
-        e.target.classList.add("changed");
-    });
-    tile.addEventListener("mouseout", function(e) {
-        e.target.classList.remove("changed");
-    })
+reset.addEventListener("click", () => {
+    input = prompt("Enter a number, 2 to 100");
+    if (input >= 2 && input <= 100) {
+        createGrid(input);
+    }
+    else {
+        alert("Can't you read ya wanker?");
+    }
 });
-
-let button = document.querySelector("#newGrid");
