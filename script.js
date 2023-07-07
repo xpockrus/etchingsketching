@@ -1,7 +1,6 @@
 const newGrid = document.querySelector("#newGrid");
 const resetGrid = document.querySelector("#resetGrid");
 const randomBtn = document.querySelector("#random");
-const black = document.querySelector("#blackOut");
 
 function createGrid(size) {
     let container = document.querySelector("#container");
@@ -48,22 +47,6 @@ function randomColor() {
         })
     })
 }
-
-function blackness() {
-    let tiles = document.querySelectorAll(".changed");
-    tiles.forEach((tile) => {
-        tile.addEventListener("mouseover", () => {
-            let num = 255;
-            num = (num - (num * 0.1));
-            let darkColor = `rgb(${num}, ${num}, ${num})`;
-            tile.style.backgroundColor = darkColor;
-        })
-    })
-}
-
-blackOut.addEventListener("click", () => {
-    blackness();
-});
 
 randomBtn.addEventListener("click", () => {
     randomColor();
