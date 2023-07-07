@@ -12,5 +12,8 @@ body {
     width: 750px;
     height: 750px;
     border: 2px dashed cyan;
-    margin-top: 2em;
+}
+
+button {
+    margin-bottom: 2em;
 }
